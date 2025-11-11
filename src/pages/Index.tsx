@@ -44,12 +44,13 @@ const Index = () => {
 
       <div className="relative z-10 text-center px-4 max-w-6xl w-full">
         <h1 
-          className="text-3xl md:text-5xl lg:text-6xl mb-16 tracking-[0.3em] text-white uppercase animate-fade-in"
+          className="text-3xl md:text-5xl lg:text-7xl mb-16 tracking-[0.2em] text-white uppercase animate-fade-in"
           style={{ 
-            fontFamily: "'Cinzel', serif",
+            fontFamily: "'Metal Mania', cursive",
             fontWeight: 400,
-            textShadow: '0 0 20px rgba(220, 20, 60, 0.8), 0 0 40px rgba(220, 20, 60, 0.5), 2px 2px 10px rgba(0, 0, 0, 0.9)',
-            letterSpacing: '0.4em'
+            textShadow: '0 0 20px rgba(220, 20, 60, 0.9), 0 0 40px rgba(220, 20, 60, 0.7), 0 0 60px rgba(139, 0, 0, 0.5), 4px 4px 15px rgba(0, 0, 0, 1)',
+            letterSpacing: '0.3em',
+            transform: 'skewY(-2deg)'
           }}
         >
           Жду нашей встречи
@@ -76,9 +77,9 @@ const Index = () => {
                   <div 
                     className="text-6xl md:text-7xl lg:text-9xl font-light text-white mb-3 relative tabular-nums neon-glow"
                     style={{ 
-                      fontFamily: "'Cinzel', serif",
-                      fontWeight: 300,
-                      letterSpacing: '0.05em'
+                      fontFamily: "'Creepster', cursive",
+                      fontWeight: 400,
+                      letterSpacing: '0.1em'
                     }}
                   >
                     {String(item.value).padStart(2, '0')}
@@ -87,8 +88,8 @@ const Index = () => {
                   <div 
                     className="text-xs md:text-sm text-white/70 tracking-[0.4em] uppercase neon-glow-subtle"
                     style={{ 
-                      fontFamily: "'Cinzel', serif",
-                      fontWeight: 300,
+                      fontFamily: "'Metal Mania', cursive",
+                      fontWeight: 400,
                       letterSpacing: '0.5em'
                     }}
                   >
@@ -101,13 +102,14 @@ const Index = () => {
         </div>
 
         <p 
-          className="text-xl md:text-2xl lg:text-3xl tracking-[0.3em] text-white/80 uppercase animate-fade-in neon-glow-subtle"
+          className="text-xl md:text-2xl lg:text-4xl tracking-[0.2em] text-white/80 uppercase animate-fade-in neon-glow-subtle"
           style={{ 
-            fontFamily: "'Cormorant Garamond', serif",
-            fontWeight: 300,
+            fontFamily: "'Metal Mania', cursive",
+            fontWeight: 400,
             animationDelay: '0.6s',
             animationFillMode: 'backwards',
-            letterSpacing: '0.5em'
+            letterSpacing: '0.4em',
+            transform: 'skewY(-1deg)'
           }}
         >
           Каждая свеча погаснет...
