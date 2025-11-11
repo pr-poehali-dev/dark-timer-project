@@ -32,42 +32,31 @@ const Index = () => {
   }, [targetDate]);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden bg-[#0a0a0a]">
-      <div className="absolute inset-0 bg-gradient-radial from-[#4a0000]/20 via-transparent to-transparent" />
-      
-      <div className="absolute inset-0">
-        {[...Array(30)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-1 h-1 bg-[#8B0000] rounded-full animate-pulse"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${2 + Math.random() * 3}s`,
-              opacity: 0.3 + Math.random() * 0.4
-            }}
-          />
-        ))}
+    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden bg-black">
+      <div className="absolute inset-0 opacity-30">
+        <img 
+          src="https://cdn.poehali.dev/files/bf1cc925-072d-42aa-abc1-4a344ee6f415.jpg"
+          alt="background"
+          className="w-full h-full object-cover"
+          style={{ filter: 'brightness(0.4) contrast(1.2)' }}
+        />
       </div>
 
-      <div className="relative z-10 text-center px-4 max-w-4xl">
+      <div className="relative z-10 text-center px-4 max-w-6xl w-full">
         <h1 
-          className="text-4xl md:text-6xl lg:text-7xl mb-12 tracking-widest text-[#b8860b] uppercase animate-fade-in"
+          className="text-3xl md:text-5xl lg:text-6xl mb-16 tracking-[0.3em] text-white/90 uppercase animate-fade-in"
           style={{ 
             fontFamily: "'Cinzel', serif",
-            fontWeight: 600,
-            textShadow: '0 0 30px rgba(139, 0, 0, 0.8), 0 0 60px rgba(139, 0, 0, 0.4)',
-            letterSpacing: '0.15em'
+            fontWeight: 400,
+            textShadow: '2px 2px 20px rgba(0, 0, 0, 0.9)',
+            letterSpacing: '0.4em'
           }}
         >
           Жду нашей встречи
         </h1>
 
-        <div className="relative mb-12">
-          <div className="absolute inset-0 bg-gradient-to-b from-[#8B0000]/20 to-transparent blur-3xl" />
-          
-          <div className="relative grid grid-cols-4 gap-3 md:gap-6 lg:gap-8">
+        <div className="relative mb-16">
+          <div className="relative grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 lg:gap-12">
             {[
               { value: timeLeft.days, label: 'ДНЕЙ' },
               { value: timeLeft.hours, label: 'ЧАСОВ' },
@@ -76,42 +65,36 @@ const Index = () => {
             ].map((item, index) => (
               <div 
                 key={index}
-                className="relative group"
+                className="relative"
                 style={{
-                  animation: 'scale-in 0.5s ease-out',
-                  animationDelay: `${index * 0.1}s`,
+                  animation: 'scale-in 0.6s ease-out',
+                  animationDelay: `${index * 0.15}s`,
                   animationFillMode: 'backwards'
                 }}
               >
-                <div className="absolute inset-0 bg-[#8B0000]/10 blur-xl group-hover:bg-[#8B0000]/20 transition-all duration-500" />
-                
-                <div className="relative bg-black/60 border-2 border-[#8B0000]/40 backdrop-blur-sm p-4 md:p-6 lg:p-8 transform hover:scale-105 transition-all duration-300">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#8B0000]/5 to-transparent" />
-                  
+                <div className="relative bg-transparent border border-white/20 p-6 md:p-8 lg:p-10">
                   <div 
-                    className="text-5xl md:text-7xl lg:text-8xl font-black text-[#ff4444] mb-2 relative"
+                    className="text-6xl md:text-7xl lg:text-8xl font-light text-white mb-3 relative tabular-nums"
                     style={{ 
                       fontFamily: "'Cinzel', serif",
-                      textShadow: '0 0 20px rgba(255, 68, 68, 0.8), 0 0 40px rgba(139, 0, 0, 0.6), 2px 2px 0px rgba(0,0,0,0.8)',
-                      letterSpacing: '-0.05em'
+                      fontWeight: 300,
+                      textShadow: '0 0 30px rgba(255, 255, 255, 0.3)',
+                      letterSpacing: '0.05em'
                     }}
                   >
                     {String(item.value).padStart(2, '0')}
                   </div>
                   
                   <div 
-                    className="text-xs md:text-sm lg:text-base text-[#b8860b] tracking-[0.3em] uppercase"
+                    className="text-xs md:text-sm text-white/60 tracking-[0.4em] uppercase"
                     style={{ 
                       fontFamily: "'Cinzel', serif",
-                      fontWeight: 400,
-                      textShadow: '0 0 10px rgba(139, 0, 0, 0.5)'
+                      fontWeight: 300,
+                      letterSpacing: '0.5em'
                     }}
                   >
                     {item.label}
                   </div>
-                  
-                  <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#8B0000] to-transparent" />
-                  <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#8B0000] to-transparent" />
                 </div>
               </div>
             ))}
@@ -119,14 +102,14 @@ const Index = () => {
         </div>
 
         <p 
-          className="text-2xl md:text-3xl lg:text-4xl tracking-[0.2em] text-[#8B0000] uppercase animate-fade-in"
+          className="text-xl md:text-2xl lg:text-3xl tracking-[0.3em] text-white/70 uppercase animate-fade-in"
           style={{ 
             fontFamily: "'Cormorant Garamond', serif",
             fontWeight: 300,
-            textShadow: '0 0 20px rgba(139, 0, 0, 0.6)',
-            animationDelay: '0.5s',
+            textShadow: '2px 2px 15px rgba(0, 0, 0, 0.8)',
+            animationDelay: '0.6s',
             animationFillMode: 'backwards',
-            letterSpacing: '0.25em'
+            letterSpacing: '0.5em'
           }}
         >
           Каждая свеча погаснет...
@@ -137,18 +120,18 @@ const Index = () => {
         @keyframes scale-in {
           from {
             opacity: 0;
-            transform: scale(0.9);
+            transform: scale(0.95) translateY(10px);
           }
           to {
             opacity: 1;
-            transform: scale(1);
+            transform: scale(1) translateY(0);
           }
         }
         
         @keyframes fade-in {
           from {
             opacity: 0;
-            transform: translateY(-20px);
+            transform: translateY(-15px);
           }
           to {
             opacity: 1;
@@ -157,11 +140,7 @@ const Index = () => {
         }
         
         .animate-fade-in {
-          animation: fade-in 1s ease-out;
-        }
-        
-        .bg-gradient-radial {
-          background: radial-gradient(circle at center, var(--tw-gradient-stops));
+          animation: fade-in 1.2s ease-out;
         }
       `}</style>
     </div>
